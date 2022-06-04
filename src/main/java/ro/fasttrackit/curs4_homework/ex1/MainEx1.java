@@ -20,11 +20,29 @@ public class MainEx1 {
                 ));
 
         System.out.println(studentService.avgGradeFor3Students());
-        studentService.textBlocks();
 
-       var courses = studentService.getCourses();
+        var courses = Arrays.asList(
+                """
+                        {
+                            "course" : "math101",
+                            "semester": "2"
+                        }
+                        """,
+                """
+                        {
+                            "course" : "history202",
+                            "semester": "1"
+                        }
+                        """,
+                """
+                        {
+                            "course" : "enghlish102",
+                            "semester": "1"
+                        }
+                        """
+        );
 
-        System.out.println(studentService.randomAllocationCourse(courses));
+        studentService.randomAllocationCourse(courses);
 
     }
 }

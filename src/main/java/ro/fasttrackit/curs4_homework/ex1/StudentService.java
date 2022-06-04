@@ -24,44 +24,12 @@ public class StudentService {
                                 + String.format("%.2f", avg)));
     }
 
-    public void textBlocks() {
-        System.out.println("""
-                {
-                    "course" : "%s",
-                    "semester" : "%s",
-                }
-                """.formatted("Math101", "2"));
-    }
-
-    public List<String> getCourses() {
-        return Arrays.asList(
-                """
-                        {
-                            "course" : "math101",
-                            "semester": "2"
-                        }
-                        """,
-                """
-                        {
-                            "course" : "history202",
-                            "semester": "1"
-                        }
-                        """,
-                """
-                        {
-                            "course" : "enghlish102",
-                            "semester": "1"
-                        }
-                        """
-        );
-    }
-
-    public Map<String, String> randomAllocationCourse(List<String> courses) {
-        Map<String, String> result = new HashMap<>();
-
-        students.stream().forEach(student -> result.put(student.name(), getRandomCourse(courses)));
-
-        return result;
+    public void randomAllocationCourse(List<String> courses) {
+        students.stream().forEach(
+                student -> System.out.println("""
+                        %s will participare to course:
+                        %s
+                        """.formatted(student.name(), getRandomCourse(courses))));
     }
 
     private String getRandomCourse(List<String> courses) {

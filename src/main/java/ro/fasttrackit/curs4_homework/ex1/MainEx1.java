@@ -1,6 +1,7 @@
 package ro.fasttrackit.curs4_homework.ex1;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.List;
 
 public class MainEx1 {
@@ -20,5 +21,10 @@ public class MainEx1 {
 
         System.out.println(studentService.avgGradeFor3Students());
         studentService.textBlocks();
+
+       var courses = studentService.getCourses();
+
+        System.out.println(studentService.randomAllocationCourse(courses));
+
     }
 }

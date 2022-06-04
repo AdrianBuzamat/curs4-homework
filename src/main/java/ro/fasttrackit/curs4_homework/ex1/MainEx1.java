@@ -44,5 +44,7 @@ public class MainEx1 {
 
         studentService.randomAllocationCourse(courses);
 
+        System.out.println(studentService.getRankedList());
+
     }
 }

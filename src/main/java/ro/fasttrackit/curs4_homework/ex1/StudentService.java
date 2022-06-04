@@ -36,4 +36,14 @@ public class StudentService {
         return courses.get(new Random().nextInt(courses.size()));
     }
 
+
+
+    private String setRanks(int index){
+        return switch (index) {
+            case 1,2,3-> "1st grade";
+            case 4 -> "5th grade";
+            default -> "7th grade";
+        };
+    }
+
 }
